@@ -12,7 +12,7 @@ st.markdown("Este panel interactivo permite analizar los casos de violencia repo
 # Cargar datos
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data/violencia.csv", encoding="latin-1", dayfirst=True)
+    df = pd.read_csv("Data/violencia.csv", encoding="latin-1", dayfirst=True)
     df.columns = df.columns.str.strip().str.replace(" ", "_").str.upper()
     df['FECHA__DEL__HECHO'] = pd.to_datetime(df['FECHA__DEL__HECHO'], errors='coerce', dayfirst=True)
     return df
